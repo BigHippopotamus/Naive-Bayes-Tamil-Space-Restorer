@@ -287,7 +287,6 @@ P. Norvig, “Natural language corpus data,” in Beautiful Data, T.
 Segaran and J. Hammerbacher, Eds. Sebastopol: O’Reilly, 2009, pp.
 219-242.
 
-Sandeep S, Sanjith S, Bharadwaj Sudarsan et al. "Word Segmentation 
-of Ancient Tamil Text extracted from inscriptions", 16 September
-2024, PREPRINT (Version 1) available at Research Square 
-[https://doi.org/10.21203/rs.3.rs-4901928/v1]
+Sandeep, S., Sanjith, S. & Sudarsan, B. Word segmentation of 
+ancient Tamil text extracted from inscriptions. npj Herit. Sci. 
+13, 97 (2025). https://doi.org/10.1038/s40494-025-01612-2
