@@ -6,7 +6,7 @@ REQUIREMENTS = [
     'tqdm',
     'psutil',
     'scikit-learn',
-    'fre @ git+https://github.com/ljdyer/feature-restoration-evaluator.git'
+    'fre @ git+https://github.com/BigHippopotamus/Feature-Restoration-Evaluator.git'
 ]
 
 setup(
