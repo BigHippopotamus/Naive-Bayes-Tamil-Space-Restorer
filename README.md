@@ -22,7 +22,7 @@ from nb_tamil_space_restorer import NBTamilSpaceRestorer
 from nb_tamil_space_restorer.mapper import map, unmap
 ```
 
-## Model training, optimization, and inference using the `NBSpaceRestorer` class
+## Model training, optimization, and inference using the `NBTamilSpaceRestorer` class
 
 ### Map/unmap text
 
@@ -44,7 +44,7 @@ unmap('鵵鱗鲚')
 
 ### Initialize and train a model
 
-#### `NBSpaceRestorer.__init__`
+#### `NBTamilSpaceRestorer.__init__`
 
 ```python
     # ====================
@@ -85,7 +85,7 @@ unmap('鵵鱗鲚')
 #### Example usage:
 
 ```python
-restorer = NBSpaceRestorer(
+restorer = NBTamilSpaceRestorer(
     train_texts=map(train['reference'].to_list()),
     ignore_case=True,
     save_path='AncientTamil.pickle'
@@ -95,7 +95,7 @@ restorer = NBSpaceRestorer(
 
 ### Run a grid search to find optimal hyperparameters for inference
 
-#### `NBSpaceRestorer.add_grid_search`
+#### `NBTamilSpaceRestorer.add_grid_search`
 
 ```python
     # ====================
@@ -139,7 +139,7 @@ restorer.add_grid_search(
 
 ### Show optimal hyperparameters from the current grid search
 
-#### `NBSpaceRestorer.show_optimal_params`
+#### `NBTamilSpaceRestorer.show_optimal_params`
 
 ```python
     # ====================
@@ -175,7 +175,7 @@ restorer.show_optimal_params(metric_to_optimize='Recall')
 
 ### Apply the optimal hyperparameters from the current grid search
 
-#### `NBSpaceRestorer.set_optimal_params`
+#### `NBTamilSpaceRestorer.set_optimal_params`
 
 ```python
     # ====================
@@ -210,14 +210,14 @@ restorer.set_optimal_params()
 
 ### Load a previously saved model from a pickle file
 
-#### `NBSpaceRestorer.load`
+#### `NBTamilSpaceRestorer.load`
 
 ```python
     # ====================
     @classmethod
     def load(cls,
              load_path: str,
-             read_only: bool = False) -> 'NBSpaceRestorer':
+             read_only: bool = False) -> 'NBTamilSpaceRestorer':
         """Load a previously saved instance of the class.
 
         Args:
@@ -229,7 +229,7 @@ restorer.set_optimal_params()
             loading will not be written back to the pickle file.
 
         Returns:
-          NBSpaceRestorer:
+          NBTamilSpaceRestorer:
             The loaded class instance
         """
 ```
@@ -237,15 +237,15 @@ restorer.set_optimal_params()
 #### Example usage:
 
 ```python
-restorer = NBSpaceRestorer.load(
+restorer = NBTamilSpaceRestorer.load(
     'AncientTamil.pickle',
     read_only=True
 )
 ```
 
-### Restore spaces to an unsegmented sequence of input characters
+### Restore spaces to an unsegmented *mapped* sequence of input characters
 
-#### `NBSpaceRestorer.restore`
+#### `NBTamilSpaceRestorer.restore`
 
 ```python
     # ====================
@@ -258,8 +258,8 @@ restorer = NBSpaceRestorer.load(
 
         Args:
           texts (Union[str, List[str]]):
-            Either a single string of input characters not containing spaces
-            (e.g. 'thisisasentence') or a list of such strings
+            Either a single string of mapped input characters not containing
+            spaces (e.g. '鵵鱗鲚') or a list of such strings
           L (Optional[int], optional):
             The value of the hyperparameter L to set before restoring
           lambda_ (Optional[float], optional):
